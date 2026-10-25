@@ -1,18 +1,29 @@
 const mysql = require("mysql2");
+require("dotenv").config();
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "12345",
-  database: "shopverse"
-});
+const isProduction = process.env.DB_SSL === "true";
+
+const dbConfig = {
+  host:     process.env.DB_HOST     || "localhost",
+  port:     Number(process.env.DB_PORT) || 3306,
+  user:     process.env.DB_USER     || "root",
+  password: process.env.DB_PASSWORD || "12345",
+  database: process.env.DB_NAME     || "shopverse",
+};
+
+if (isProduction && process.env.DB_CA_CERT) {
+  dbConfig.ssl = { rejectUnauthorized: true, ca: process.env.DB_CA_CERT };
+}
+
+const db = mysql.createConnection(dbConfig);
 
 db.connect((err) => {
   if (err) {
     console.error("❌ MySQL Connection Failed:", err.message);
     process.exit(1);
   }
-  console.log("✅ MySQL Connected...");
+  const env = isProduction ? "☁️  Aiven Cloud" : "💻 Localhost";
+  console.log(`✅ MySQL Connected — ${env}`);
 
   const createUsersTable = `
     CREATE TABLE IF NOT EXISTS users (

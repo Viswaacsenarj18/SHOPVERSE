@@ -2,23 +2,46 @@ const express = require("express");
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+require("dotenv").config(); // Load .env file
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "12345",
-  database: "shopverse"
-});
+// ============================================================
+//  Smart DB Connection — works for BOTH:
+//    LOCAL:      DB_SSL=false  → plain MySQL (localhost/XAMPP)
+//    PRODUCTION: DB_SSL=true   → Aiven Cloud MySQL with SSL
+// ============================================================
+const isProduction = process.env.DB_SSL === "true";
+
+const dbConfig = {
+  host:     process.env.DB_HOST     || "localhost",
+  port:     Number(process.env.DB_PORT) || 3306,
+  user:     process.env.DB_USER     || "root",
+  password: process.env.DB_PASSWORD || "12345",
+  database: process.env.DB_NAME     || "shopverse",
+};
+
+// Only add SSL config when connecting to Aiven Cloud
+if (isProduction && process.env.DB_CA_CERT) {
+  dbConfig.ssl = {
+    rejectUnauthorized: true,
+    ca: process.env.DB_CA_CERT,
+  };
+}
+
+const db = mysql.createConnection(dbConfig);
 
 db.connect((err) => {
   if (err) {
     console.error("❌ MySQL Connection Failed:", err.message);
+    console.error("   Host:", dbConfig.host, "| Port:", dbConfig.port, "| DB:", dbConfig.database);
+    console.error("   Tip: Check your .env file settings.");
   } else {
-    console.log("✅ MySQL Connected...");
+    const env = isProduction ? "☁️  Aiven Cloud (Production)" : "💻 Localhost (Development)";
+    console.log(`✅ MySQL Connected — ${env}`);
+    console.log(`   Host: ${dbConfig.host} | DB: ${dbConfig.database}`);
   }
 });
 
