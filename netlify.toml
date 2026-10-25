@@ -1,0 +1,10 @@
+# netlify.toml - ShopVerse Netlify Configuration
+
+[build]
+  publish = "."       # Root folder contains index.html
+  command = ""        # No build step needed (plain HTML/CSS/JS)
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

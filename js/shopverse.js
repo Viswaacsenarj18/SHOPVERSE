@@ -3,7 +3,11 @@
  * Cart, Wishlist, User Session & Global UI Helpers
  */
 
-const API_BASE = 'http://localhost:5000/api';
+// Auto-detect backend URL: Render in production, localhost for development
+const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:5000/api'
+  : 'https://shopverse-bt3k.onrender.com/api';
+
 
 // --- Cart Utilities ---
 function getCart() {
