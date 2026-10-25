@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop All Products - ShopVerse</title>
+  
+  <link rel="icon" type="image/png" href="img/shopping-bag.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom ShopVerse CSS -->
+  <link href="css/shopverse.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-notice-bar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        <span class="me-3"><i class="fa fa-truck-fast me-1 text-primary"></i> Free Express Delivery on orders over ₹999</span>
+        <span><i class="fa fa-shield-halved me-1 text-success"></i> 100% Genuine Certified Gear</span>
+      </div>
+      <div>
+        <a href="contact.html" class="me-3"><i class="fa fa-headset me-1"></i> Support 24/7</a>
+        <a href="tel:9876543210"><i class="fa fa-phone me-1"></i> 9876543210</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg shopverse-navbar">
+    <div class="container">
+      <a class="shopverse-brand" href="index.html">
+        <div class="brand-icon-box">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+        <h1 class="brand-text">SHOP<span>VERSE</span></h1>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <i class="fas fa-bars fs-4 text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto nav-links-wrap mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Search Bar -->
+        <form class="global-search-form d-flex align-items-center me-lg-3 my-2 my-lg-0">
+          <div class="nav-search-box">
+            <i class="fa fa-search search-icon"></i>
+            <input type="text" id="header-search-input" placeholder="Search products..." aria-label="Search" />
+          </div>
+        </form>
+
+        <!-- User Actions (Wishlist, Cart, Login) -->
+        <div class="d-flex align-items-center gap-2">
+          <a href="wishlist.html" class="nav-action-btn" title="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="nav-badge-count wishlist-count-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="cart.html" class="nav-action-btn" title="Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="nav-badge-count cart-count-badge" style="display: none;">0</span>
+          </a>
+
+          <div id="user-auth-slot" class="ms-1"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header Banner -->
+  <header class="shopverse-page-header">
+    <div class="container">
+      <h1 class="fw-bold">Explore Our Mega Catalog</h1>
+      <p>Browse through top 5G smartphones, laptops, trending fashion, sneakers, home appliances & lifestyle essentials.</p>
+    </div>
+  </header>
+
+  <!-- Main Shop Section (Matching Screenshot 2) -->
+  <main class="container my-4">
+    <div class="row g-4">
+      
+      <!-- Left Sidebar (Filters) -->
+      <aside class="col-lg-3">
+        <!-- Mobile Filter Toggle Button -->
+        <button class="btn btn-outline-primary w-100 d-lg-none mb-3 py-2 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse">
+          <i class="fas fa-filter me-2"></i> Toggle Filter Options
+        </button>
+
+        <div class="collapse d-lg-block" id="sidebarCollapse">
+          <!-- Categories Filter -->
+          <div class="shop-sidebar-card">
+            <h5 class="sidebar-title">
+              <i class="fa-solid fa-layer-group text-primary"></i> Categories
+            </h5>
+            <div id="sidebar-categories-list">
+              <div class="text-center py-3 text-muted"><small>Loading categories...</small></div>
+            </div>
+          </div>
+
+          <!-- Price Range Filter -->
+          <div class="shop-sidebar-card">
+            <h5 class="sidebar-title">
+              <i class="fa-solid fa-sliders text-primary"></i> Price Range
+            </h5>
+            <div class="price-inputs-row">
+              <input type="number" id="min-price-input" placeholder="Min ₹" min="0" />
+              <input type="number" id="max-price-input" placeholder="Max ₹" min="0" />
+            </div>
+            <button class="btn btn-primary w-100 py-2 fw-bold" id="apply-price-filter-btn">
+              Apply Filter
+            </button>
+          </div>
+
+          <!-- Reset Filter Button -->
+          <button class="btn btn-outline-secondary w-100 py-2 fw-semibold" id="reset-filters-btn">
+            <i class="fa-solid fa-rotate-left me-1"></i> Reset All Filters
+          </button>
+        </div>
+      </aside>
+
+      <!-- Right Product Grid Section -->
+      <section class="col-lg-9">
+        <!-- Top Controls Bar -->
+        <div class="bg-white p-3 rounded-3 border mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2 shadow-sm">
+          <div class="d-flex align-items-center gap-2">
+            <span class="text-muted small fw-bold" id="product-count-label">Showing all products</span>
+            <span class="badge bg-primary rounded-pill d-none" id="active-filter-badge"></span>
+          </div>
+
+          <div class="d-flex align-items-center gap-2">
+            <label for="sort-select" class="small text-muted mb-0 fw-semibold">Sort By:</label>
+            <select id="sort-select" class="form-select form-select-sm" style="width: auto;">
+              <option value="newest">Featured & Newest</option>
+              <option value="price_asc">Price: Low to High</option>
+              <option value="price_desc">Price: High to Low</option>
+              <option value="title_asc">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Container -->
+        <div class="row g-3 g-md-4" id="shop-products-grid">
+          <div class="col-12 text-center py-5">
+            <div class="spinner-border text-primary" role="status"></div>
+            <p class="text-muted mt-2">Loading products from database...</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="shopverse-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon-box" style="width: 36px; height: 36px; font-size: 1rem;">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+            <h4 class="brand-text text-white m-0">SHOP<span>VERSE</span></h4>
+          </div>
+          <p class="text-white pe-lg-4">Your #1 premier destination for high performance sports goods, fitness equipment, athletic apparel, and championship trophies.</p>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop Catalog</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5>Customer Care</h5>
+          <ul class="list-unstyled">
+            <li><a href="orders.html">My Orders</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="contact.html">Help & WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5>Contact Info</h5>
+          <p class="mb-1"><i class="fa fa-phone text-primary me-2"></i> 9876543210</p>
+          <p class="mb-1"><i class="fa fa-envelope text-primary me-2"></i> shopverse@example.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="m-0">&copy; 2026 <strong>ShopVerse</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle & Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/shopverse.js"></script>
+
+  <script>
+    let selectedCategoryId = 'all';
+    let currentSearch = '';
+    let currentMinPrice = '';
+    let currentMaxPrice = '';
+    let currentSort = 'newest';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Parse URL search params
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('category_id')) {
+        selectedCategoryId = urlParams.get('category_id');
+      }
+      if (urlParams.has('search')) {
+        currentSearch = urlParams.get('search');
+        document.getElementById('header-search-input').value = currentSearch;
+      }
+
+      await loadCategories();
+      await loadProducts();
+
+      // Listeners
+      document.getElementById('apply-price-filter-btn').addEventListener('click', () => {
+        currentMinPrice = document.getElementById('min-price-input').value.trim();
+        currentMaxPrice = document.getElementById('max-price-input').value.trim();
+        loadProducts();
+      });
+
+      document.getElementById('sort-select').addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        loadProducts();
+      });
+
+      document.getElementById('reset-filters-btn').addEventListener('click', () => {
+        selectedCategoryId = 'all';
+        currentSearch = '';
+        currentMinPrice = '';
+        currentMaxPrice = '';
+        currentSort = 'newest';
+        document.getElementById('min-price-input').value = '';
+        document.getElementById('max-price-input').value = '';
+        document.getElementById('header-search-input').value = '';
+        document.getElementById('sort-select').value = 'newest';
+        
+        // Update URL
+        window.history.pushState({}, '', 'shop.html');
+        
+        loadCategories();
+        loadProducts();
+      });
+    });
+
+    async function loadCategories() {
+      try {
+        const res = await fetch(`${API_BASE}/categories`);
+        const categories = await res.json();
+        const container = document.getElementById('sidebar-categories-list');
+
+        let totalProducts = categories.reduce((sum, c) => sum + (c.product_count || 0), 0);
+
+        let html = `
+          <div class="category-filter-item ${selectedCategoryId === 'all' ? 'active' : ''}" onclick="selectCategory('all', this)">
+            <span>All Categories</span>
+            <span class="category-count-badge">${totalProducts}</span>
+          </div>
+        `;
+
+        categories.forEach(cat => {
+          const isActive = String(selectedCategoryId) === String(cat.id) || selectedCategoryId === cat.slug;
+          html += `
+            <div class="category-filter-item ${isActive ? 'active' : ''}" onclick="selectCategory('${cat.id}', this, '${cat.name}')">
+              <span>${cat.name}</span>
+              <span class="category-count-badge">${cat.product_count || 0}</span>
+            </div>
+          `;
+        });
+
+        container.innerHTML = html;
+      } catch (err) {
+        console.error('Error loading categories:', err);
+      }
+    }
+
+    function selectCategory(catId, element, catName = '') {
+      selectedCategoryId = catId;
+      document.querySelectorAll('.category-filter-item').forEach(el => el.classList.remove('active'));
+      if (element) element.classList.add('active');
+
+      loadProducts();
+    }
+
+    async function loadProducts() {
+      const grid = document.getElementById('shop-products-grid');
+      grid.innerHTML = `
+        <div class="col-12 text-center py-5">
+          <div class="spinner-border text-primary" role="status"></div>
+          <p class="text-muted mt-2">Loading products...</p>
+        </div>
+      `;
+
+      let queryUrl = `${API_BASE}/products?sort=${currentSort}`;
+      if (selectedCategoryId && selectedCategoryId !== 'all') {
+        queryUrl += `&category_id=${selectedCategoryId}`;
+      }
+      if (currentSearch) {
+        queryUrl += `&search=${encodeURIComponent(currentSearch)}`;
+      }
+      if (currentMinPrice) {
+        queryUrl += `&min_price=${currentMinPrice}`;
+      }
+      if (currentMaxPrice) {
+        queryUrl += `&max_price=${currentMaxPrice}`;
+      }
+
+      try {
+        const res = await fetch(queryUrl);
+        const products = await res.json();
+
+        // Update badge and count label
+        const countLabel = document.getElementById('product-count-label');
+        const filterBadge = document.getElementById('active-filter-badge');
+
+        countLabel.textContent = `Showing ${products.length} product${products.length === 1 ? '' : 's'}`;
+
+        if (currentSearch) {
+          filterBadge.textContent = `Search: "${currentSearch}"`;
+          filterBadge.classList.remove('d-none');
+        } else {
+          filterBadge.classList.add('d-none');
+        }
+
+        if (!products || products.length === 0) {
+          grid.innerHTML = `
+            <div class="col-12 text-center py-5">
+              <i class="fa-solid fa-box-open fs-1 text-muted mb-3 d-block"></i>
+              <h5 class="text-dark">No products found</h5>
+              <p class="text-muted">Try adjusting your filters or search query.</p>
+              <button class="btn btn-primary btn-sm mt-2 rounded-pill px-4" onclick="document.getElementById('reset-filters-btn').click()">Reset Filters</button>
+            </div>
+          `;
+          return;
+        }
+
+        let html = '';
+        products.forEach(p => {
+          const isFav = isWishlisted(p.id);
+          html += `
+            <div class="col-6 col-md-4 col-xl-3">
+              <div class="shopverse-product-card">
+                <div class="product-img-container">
+                  <img src="${p.image}" alt="${p.title}" loading="lazy" />
+                  <button class="product-wishlist-toggle ${isFav ? 'active' : ''}" 
+                          data-product='${JSON.stringify(p).replace(/'/g, "&apos;")}' 
+                          onclick="handleWishlistClick(this, event)" 
+                          title="Add to Wishlist">
+                    <i class="fa-solid fa-heart"></i>
+                  </button>
+                </div>
+                <div class="d-flex flex-column flex-grow-1">
+                  <span class="product-category-label text-truncate">${p.category_name || 'SPORT & GEAR'}</span>
+                  <h5 class="product-card-title" title="${p.title}">${p.title}</h5>
+                  <div class="product-card-price">₹${parseFloat(p.price).toFixed(0)}</div>
+                </div>
+                <div class="product-actions-wrap mt-2">
+                  <button class="btn-buy-now" data-product='${JSON.stringify(p).replace(/'/g, "&apos;")}' onclick="handleBuyNowClick(this)">
+                    <i class="fa-solid fa-bolt"></i> Buy Now
+                  </button>
+                  <button class="btn-add-cart-outline" data-product='${JSON.stringify(p).replace(/'/g, "&apos;")}' onclick="handleAddCartClick(this)">
+                    <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                  </button>
+                  <a href="detail.html?id=${p.id}" class="btn-view-product">
+                    <i class="fa-regular fa-eye"></i> View
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        grid.innerHTML = html;
+      } catch (err) {
+        console.error('Error fetching products:', err);
+        grid.innerHTML = `<div class="col-12 text-center text-danger py-5">Failed to fetch products from server.</div>`;
+      }
+    }
+
+    function handleWishlistClick(btn, e) {
+      e.stopPropagation();
+      const product = JSON.parse(btn.getAttribute('data-product'));
+      toggleWishlist(product, btn);
+    }
+
+    function handleAddCartClick(btn) {
+      const product = JSON.parse(btn.getAttribute('data-product'));
+      addToCart(product, 1, true);
+    }
+
+    function handleBuyNowClick(btn) {
+      const product = JSON.parse(btn.getAttribute('data-product'));
+      buyNow(product);
+    }
+  </script>
+</body>
+</html>

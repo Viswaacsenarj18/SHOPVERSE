@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <title>ShopVerse - Fashion</title>
+  <link rel="icon" type="image/png" href="img/shopping-bag.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Custom CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Topbar Start -->
+  <div class="container-fluid bg-dark text-white py-2 px-lg-5">
+    <div class="row">
+      <div class="col-lg-6 text-center text-lg-start mb-2 mb-lg-0">
+        <small><i class="fa fa-phone-alt me-2"></i>9876543210</small>
+        <small class="px-3">|</small>
+        <small><i class="fa fa-envelope me-2"></i>shopverse@example.com</small>
+      </div>
+    </div>
+  </div>
+  <!-- Topbar End -->
+
+  <!-- Navbar Start -->
+  <div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 px-lg-5">
+      <a href="index.html" class="navbar-brand"><h1 class="m-0 text-uppercase text-primary"><i class="fa fa-shopping-bag me-2"></i>SHOPVERSE</h1></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav mx-auto">
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="shop.html" class="nav-item nav-link">Shop</a>
+
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+            <div class="dropdown-menu">
+              
+              <a href="cart.html" class="dropdown-item">Cart</a>
+              
+              <a href="account.html" class="dropdown-item">My Account</a>
+              <a href="about.html" class="dropdown-item">About</a>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="fashion.html">Fashion</a>
+              <a class="dropdown-item" href="electronics.html">Electronics</a>
+              <a class="dropdown-item" href="home.html">Home Essentials</a>
+              <a class="dropdown-item" href="sports.html">Sports & Fitness</a>
+            </div>
+          </div>
+
+          <a href="contact.html" class="nav-item nav-link">Contact</a>
+        </div>
+
+        <a href="login.html" class="btn btn-primary py-2 px-3 me-2">Logout</a>
+        <a href="signup.html" class="btn btn-primary py-2 px-3">Sign Up</a>
+      </div>
+    </nav>
+  </div>
+  <!-- Navbar End -->
+<!-- Jumbotron Start -->
+<div class="jumbotron jumbotron-fluid page-header d-flex align-items-center"
+     style="margin-bottom: 60px; height: 220px; background-color: #0d6efd;">
+  <div class="container text-center">
+    <h1 class="text-white fw-bold mb-2">Shop From Home</h1>
+    <h2 class="text-white display-5">MY CART</h2>
+  </div>
+</div>
+<!-- Jumbotron End -->
+
+ 
+
+  <!-- Products Section -->
+  <div class="container py-5">
+    <div class="row g-4" id="product-list">
+      <!-- Products will go here (JS script not needed for static load) -->
+
+      <!-- Example Product -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100">
+          <img src="https://m.media-amazon.com/images/I/61VQV-NwwjL._AC_SX679_.jpg" class="card-img-top" alt="Stylish Jacket">
+          <div class="card-body">
+            <h5 class="card-title">Stylish Jacket</h5>
+            <p class="card-text">Brand: UrbanEdge</p>
+            <p class="card-text">$59.99</p>
+            <button class="btn btn-primary btn-add"
+              data-id="f1"
+              data-title="Stylish Jacket"
+              data-brand="UrbanEdge"
+              data-price="59.99"
+              data-image="https://m.media-amazon.com/images/I/61VQV-NwwjL._AC_SX679_.jpg">
+              <i class="fas fa-cart-plus me-1"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+  <!-- Product 2 -->
+      
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71UnjM6ErlL._AC_UL480_FMwebp_QL65_.jpg" class="img-fluid product-img" alt="Men's Shirt">
+    <div class="product-info">
+      <div class="product-title">Casual Shirt</div>
+      <div class="product-brand">FashionBay</div>
+      <div class="product-price">$39.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f2"
+              data-title="Casual Shirt"
+              data-brand="FashionBay"
+              data-price="39.99"
+              data-image="https://m.media-amazon.com/images/I/71UnjM6ErlL._AC_UL480_FMwebp_QL65_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+<!-- Product 3 -->
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71LazDE-3SL._AC_UL480_FMwebp_QL65_.jpg" class="img-fluid product-img" alt="Summer Dress">
+    <div class="product-info">
+      <div class="product-title">Summer Dress</div>
+      <div class="product-brand">FemmeFit</div>
+      <div class="product-price">$29.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f3"
+              data-title="Summer Dress"
+              data-brand="FemmeFit"
+              data-price="29.99"
+              data-image="https://m.media-amazon.com/images/I/71LazDE-3SL._AC_UL480_FMwebp_QL65_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 4 -->
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/616xchp1ECL._AC_SR360,240_CB1169409_QL70_.jpg" class="img-fluid product-img" alt="Denim Jeans">
+    <div class="product-info">
+      <div class="product-title">Denim Jeans</div>
+      <div class="product-brand">DenimWear</div>
+      <div class="product-price">$49.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f4"
+              data-title="Denim Jeans"
+              data-brand="DenimWear"
+              data-price="49.99"
+              data-image="https://m.media-amazon.com/images/I/616xchp1ECL._AC_SR360,240_CB1169409_QL70_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 5 -->
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/61-mQb8+P0L._AC_UL480_FMwebp_QL65_.jpg" class="img-fluid product-img" alt="Hoodie">
+    <div class="product-info">
+      <div class="product-title">Hoodie Jacket</div>
+      <div class="product-brand">CoolMode</div>
+      <div class="product-price">$44.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f5"
+              data-title="Hoodie Jacket"
+              data-brand="CoolMode"
+              data-price="44.99"
+              data-image="https://m.media-amazon.com/images/I/61-mQb8+P0L._AC_UL480_FMwebp_QL65_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 6 -->
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/61LLNeKzrZL._AC_UL480_FMwebp_QL65_.jpg" class="img-fluid product-img" alt="Printed T-Shirt">
+    <div class="product-info">
+      <div class="product-title">Printed T-Shirt</div>
+      <div class="product-brand">TeeTrend</div>
+      <div class="product-price">$19.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f6"
+              data-title="Printed T-Shirt"
+              data-brand="TeeTrend"
+              data-price="19.99"
+              data-image="https://m.media-amazon.com/images/I/61LLNeKzrZL._AC_UL480_FMwebp_QL65_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 7 -->
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/41QtRI21vXL._AC_UL480_FMwebp_QL65_.jpg" class="img-fluid product-img" alt="Accessories">
+    <div class="product-info">
+      <div class="product-title">Accessories Set</div>
+      <div class="product-brand">StyleHub</div>
+      <div class="product-price">$24.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f7"
+              data-title="Accessories Set"
+              data-brand="StyleHub"
+              data-price="24.99"
+              data-image="https://m.media-amazon.com/images/I/41QtRI21vXL._AC_UL480_FMwebp_QL65_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 8 -->
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/61HTKCm7vML._AC_UL480_FMwebp_QL65_.jpg" class="img-fluid product-img" alt="Handbag">
+    <div class="product-info">
+      <div class="product-title">Designer Handbag</div>
+      <div class="product-brand">BagIt</div>
+      <div class="product-price">$79.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f8"
+              data-title="Designer Handbag"
+              data-brand="BagIt"
+              data-price="79.99"
+              data-image="https://m.media-amazon.com/images/I/61HTKCm7vML._AC_UL480_FMwebp_QL65_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 9 -->
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71ivYMOzncL._AC_UL480_FMwebp_QL65_.jpg" class="img-fluid product-img" alt="Sneakers">
+    <div class="product-info">
+      <div class="product-title">Casual Sneakers</div>
+      <div class="product-brand">StepUp</div>
+      <div class="product-price">$49.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f9"
+              data-title="Casual Sneakers"
+              data-brand="StepUp"
+              data-price="49.99"
+              data-image="https://m.media-amazon.com/images/I/71ivYMOzncL._AC_UL480_FMwebp_QL65_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 10 -->
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/61s7ysgkflL._AC_UL480_FMwebp_QL65_.jpg" class="img-fluid product-img" alt="Men's Suit">
+    <div class="product-info">
+      <div class="product-title">Formal Suit</div>
+      <div class="product-brand">GentleWear</div>
+      <div class="product-price">$99.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f10"
+              data-title="Formal Suit"
+              data-brand="GentleWear"
+              data-price="99.99"
+              data-image="https://m.media-amazon.com/images/I/61s7ysgkflL._AC_UL480_FMwebp_QL65_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 11 -->
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" class="img-fluid product-img" alt="Men's Watch">
+    <div class="product-info">
+      <div class="product-title">Luxury Watch</div>
+      <div class="product-brand">ChronoX</div>
+      <div class="product-price">$129.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f11"
+              data-title="Luxury Watch"
+              data-brand="ChronoX"
+              data-price="129.99"
+              data-image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 12 -->
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/61LneAxqWVL._AC_UL480_FMwebp_QL65_.jpg" class="img-fluid product-img" alt="Women's Hat">
+    <div class="product-info">
+      <div class="product-title">Summer Hat</div>
+      <div class="product-brand">SunStyle</div>
+      <div class="product-price">$14.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f12"
+              data-title="Summer Hat"
+              data-brand="SunStyle"
+              data-price="14.99"
+              data-image="https://m.media-amazon.com/images/I/61LneAxqWVL._AC_UL480_FMwebp_QL65_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 13 -->
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/51mMSXKMeHL._AC_UL480_FMwebp_QL65_.jpg" class="img-fluid product-img" alt="Women's Shoes">
+    <div class="product-info">
+      <div class="product-title">Fashion Heels</div>
+      <div class="product-brand">GlamWalk</div>
+      <div class="product-price">$39.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f13"
+              data-title="Fashion Heels"
+              data-brand="GlamWalk"
+              data-price="39.99"
+              data-image=https://m.media-amazon.com/images/I/51mMSXKMeHL._AC_UL480_FMwebp_QL65_.jpg"">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 14 -->
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/41aAWaK3XxL._AC_SR250,250_QL65_.jpg" class="img-fluid product-img" alt="Sweatshirt">
+    <div class="product-info">
+      <div class="product-title">Unisex Sweatshirt</div>
+      <div class="product-brand">ComfyFit</div>
+      <div class="product-price">$27.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f14"
+              data-title="Unisex Sweatshirt"
+              data-brand="ComfyFit"
+              data-price="27.99"
+              data-image="https://m.media-amazon.com/images/I/41aAWaK3XxL._AC_SR250,250_QL65_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/51aDYVh+uRL._AC_UL480_FMwebp_QL65_.jpg" class="img-fluid product-img" alt="Sweatshirt">
+    <div class="product-info">
+      <div class="product-title">SHIRT</div>
+      <div class="product-brand">ComfyFit</div>
+      <div class="product-price">$27.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f14"
+              data-title="Unisex Sweatshirt"
+              data-brand="ComfyFit"
+              data-price="27.99"
+              data-image="https://m.media-amazon.com/images/I/51aDYVh+uRL._AC_UL480_FMwebp_QL65_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+<div class="col-lg-3 col-md-6">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71h9Eqd+p+L._AC_UL480_FMwebp_QL65_.jpg" class="img-fluid product-img" alt="Sweatshirt">
+    <div class="product-info">
+      <div class="product-title"> JEANS</div>
+      <div class="product-brand">ComfyFit</div>
+      <div class="product-price">$27.99</div>
+      <button class="btn btn-primary btn-add"
+              data-id="f14"
+              data-title="Unisex Sweatshirt"
+              data-brand="ComfyFit"
+              data-price="27.99"
+              data-image="https://m.media-amazon.com/images/I/71h9Eqd+p+L._AC_UL480_FMwebp_QL65_.jpg">
+        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+      <!-- Add more products here, following the same structure -->
+      <!-- You can repeat the div above with different details -->
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="text-center mt-4">
+      <a href="fashion-page2.html" class="btn btn-outline-dark">
+        Next Page <i class="fas fa-arrow-right ms-1"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container-fluid bg-dark text-white-50 py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4 class="text-white">ShopVerse</h4>
+          <p>Your trusted destination for quality products and unbeatable prices.</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-white">Quick Links</h5>
+          <a href="index.html" class="text-white-50 d-block">Home</a>
+          <a href="shop.html" class="text-white-50 d-block">Shop</a>
+          <a href="contact.html" class="text-white-50 d-block">Contact</a>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-white">Follow Us</h5>
+          <a class="text-white-50 me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="text-white-50 me-3" href="#"><i class="fab fa-instagram"></i></a>
+          <a class="text-white-50 me-3" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="text-white-50" href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Footer -->
+  <div class="container-fluid bg-dark text-white-50 border-top text-center py-3">
+    <small>&copy; 2025 <a class="text-white" href="#">ShopVerse</a>. All Rights Reserved.</small>
+  </div>
+
+  <!-- JavaScript (Cart Logic) -->
+ <script>
+  // Add to Cart Script
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn-add');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const product = {
+          id: button.dataset.id,
+          title: button.dataset.title,
+          brand: button.dataset.brand,
+          price: parseFloat(button.dataset.price),
+          image: button.dataset.image,
+          quantity: 1
+        };
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const index = cart.findIndex(item => item.id === product.id);
+
+        if (index !== -1) {
+          cart[index].quantity += 1;
+        } else {
+          cart.push(product);
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${product.title} added to cart.`);
+      });
+    });
+  });
+</script>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  
+    
+  <title>ShopVerse</title>
+</head>
+<body>
+
+  <div id="product-list">
+    <!-- Products will be inserted here -->
+  </div>
+
+  <script>
+    fetch('http://localhost:3000/api/products')
+      .then(response => response.json())
+      .then(data => {
+        const productList = document.getElementById('product-list');
+        data.forEach(product => {
+          const card = `
+            <div class="card">
+              <img src="${product.image_url}" alt="${product.title}" width="150">
+              <h3>${product.title}</h3>
+              <p>${product.description}</p>
+              <p>₹${product.price}</p>
+              <button>Add to Cart</button>
+            </div>
+          `;
+          productList.innerHTML += card;
+        });
+      })
+      .catch(error => console.error('Error:', error));
+  </script>
+
+</body>
+</html>

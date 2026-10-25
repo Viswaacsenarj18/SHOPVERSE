@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ShopVerse</title>
+  
+  <link rel="icon" type="image/png" href="img/shopping-bag.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom ShopVerse CSS -->
+  <link href="css/shopverse.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-notice-bar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        <span class="me-3"><i class="fa fa-truck-fast me-1 text-primary"></i> Free Express Delivery on orders over ₹999</span>
+        <span><i class="fa fa-shield-halved me-1 text-success"></i> 100% Genuine Certified Gear</span>
+      </div>
+      <div>
+        <a href="contact.html" class="me-3"><i class="fa fa-headset me-1"></i> Support 24/7</a>
+        <a href="tel:9876543210"><i class="fa fa-phone me-1"></i> 9876543210</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg shopverse-navbar">
+    <div class="container">
+      <a class="shopverse-brand" href="index.html">
+        <div class="brand-icon-box">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+        <h1 class="brand-text">SHOP<span>VERSE</span></h1>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <i class="fas fa-bars fs-4 text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto nav-links-wrap mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Search Bar -->
+        <form class="global-search-form d-flex align-items-center me-lg-3 my-2 my-lg-0">
+          <div class="nav-search-box">
+            <i class="fa fa-search search-icon"></i>
+            <input type="text" placeholder="Search products..." aria-label="Search" />
+          </div>
+        </form>
+
+        <!-- User Actions (Wishlist, Cart, Login) -->
+        <div class="d-flex align-items-center gap-2">
+          <a href="wishlist.html" class="nav-action-btn" title="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="nav-badge-count wishlist-count-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="cart.html" class="nav-action-btn" title="Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="nav-badge-count cart-count-badge" style="display: none;">0</span>
+          </a>
+
+          <div id="user-auth-slot" class="ms-1"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header Banner -->
+  <header class="shopverse-page-header">
+    <div class="container">
+      <h1 class="fw-bold display-5">About ShopVerse</h1>
+      <p class="lead">Your trusted destination for quality sports equipment, athletic gear & trophies</p>
+    </div>
+  </header>
+
+  <!-- About Content Section Matching Screenshot 4 -->
+  <main class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        
+        <div class="about-card-section">
+          <!-- Our Mission -->
+          <div class="mb-5">
+            <h3 class="about-section-heading">Our Mission</h3>
+            <p class="text-muted fs-5 leading-relaxed">
+              At ShopVerse, we’re passionate about bringing you the finest sports equipment and gear. Our mission is to empower athletes of all levels with high-quality products that enhance performance and inspire greatness.
+            </p>
+          </div>
+
+          <!-- Our Values -->
+          <div class="mb-5">
+            <h3 class="about-section-heading">Our Values</h3>
+            <div class="mt-3">
+              <p class="value-item-line">
+                <strong>Quality:</strong> We source only the best sports equipment and gear from trusted brands worldwide.
+              </p>
+              <p class="value-item-line">
+                <strong>Innovation:</strong> We stay ahead of the latest trends and performance technologies in modern sports.
+              </p>
+              <p class="value-item-line">
+                <strong>Community:</strong> We support athletes, youth leagues, schools, and sports enthusiasts at every single level.
+              </p>
+              <p class="value-item-line">
+                <strong>Service:</strong> We provide exceptional customer care, speedy deliveries, and friendly post-purchase support.
+              </p>
+            </div>
+          </div>
+
+          <!-- Why Choose Us? -->
+          <div class="mb-5">
+            <h3 class="about-section-heading">Why Choose Us?</h3>
+            <p class="text-muted leading-relaxed">
+              With years of experience in the sports and retail industry, we understand what athletes need. Our team consists of passionate sports enthusiasts who are dedicated to helping you find the perfect equipment for your sport. From professional athletes to weekend warriors, we have something special for everyone.
+            </p>
+          </div>
+
+          <!-- Business Registration -->
+          <div>
+            <h3 class="about-section-heading">Our Business Registration</h3>
+            <p class="text-muted mb-0">
+              ShopVerse is a registered Micro Enterprise under the Government of India. You can view our verified UDYAM registration and compliance certificate upon request.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="shopverse-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon-box" style="width: 36px; height: 36px; font-size: 1rem;">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+            <h4 class="brand-text text-white m-0">SHOP<span>VERSE</span></h4>
+          </div>
+          <p class="text-white pe-lg-4">Your #1 premier destination for high performance sports goods, fitness equipment, athletic apparel, and championship trophies.</p>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop Catalog</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5>Customer Care</h5>
+          <ul class="list-unstyled">
+            <li><a href="orders.html">My Orders</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="contact.html">Help & WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5>Contact Info</h5>
+          <p class="mb-1"><i class="fa fa-phone text-primary me-2"></i> 9876543210</p>
+          <p class="mb-1"><i class="fa fa-envelope text-primary me-2"></i> shopverse@example.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="m-0">&copy; 2026 <strong>ShopVerse</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle & Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/shopverse.js"></script>
+</body>
+</html>
