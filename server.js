@@ -23,12 +23,11 @@ const dbConfig = {
   database: process.env.DB_NAME     || "shopverse",
 };
 
-// Only add SSL config when connecting to Aiven Cloud
-if (isProduction && process.env.DB_CA_CERT) {
-  dbConfig.ssl = {
-    rejectUnauthorized: true,
-    ca: process.env.DB_CA_CERT,
-  };
+// SSL for Aiven Cloud — use CA cert if provided, else accept Aiven's cert
+if (isProduction) {
+  dbConfig.ssl = process.env.DB_CA_CERT
+    ? { rejectUnauthorized: true, ca: process.env.DB_CA_CERT }
+    : { rejectUnauthorized: false }; // works with Aiven without manual CA cert
 }
 
 const db = mysql.createConnection(dbConfig);
