@@ -37,7 +37,7 @@ body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--text-main);
   background-color: var(--bg-light);
-  overflow-x: hidden;
+  overflow-x: clip; /* clip = no horizontal scroll, but unlike hidden it doesn't trap dropdowns */
   margin: 0;
   padding: 0;
 }
